@@ -1,4 +1,11 @@
-// script.js
+// Simple navigation highlight
+const currentPage = window.location.pathname.split("/").pop();
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+    if(link.getAttribute('href') === currentPage) {
+        link.style.textDecoration = 'underline';
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     // Workout of the Day
@@ -32,3 +39,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// BMI Calculator
+function calculateBMI() {
+    const weight = document.getElementById('weight').value;
+    const height = document.getElementById('height').value;
+    const bmi = weight / ((height / 100) ** 2);
+    document.getElementById('bmi-result').textContent = bmi.toFixed(1);
+}
+
+document.getElementById('bmi-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    calculateBMI();
+});
+
+function addExercise(e) {
+    e.preventDefault();
+    const exercise = document.getElementById('exercise').value;
+    const sets = document.getElementById('sets').value;
+    const reps = document.getElementById('reps').value;
+    const workoutPlan = document.getElementById('workout-plan');
+    const li = document.createElement('li');
+    li.textContent = `${exercise} - ${sets} sets of ${reps} reps`;
+    workoutPlan.appendChild(li);
+    e.target.reset();
+}
+
+document.getElementById('workout-form').addEventListener('submit', addExercise);

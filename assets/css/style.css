@@ -84,6 +84,14 @@ main {
   text-decoration: none;
 }
 
+.program-section {
+  transition: transform 0.3s ease;
+}
+
+.program-section:hover {
+  transform: scale(1.05);
+}
+
 /* Testimonials */
 #testimonials {
   background-color: #fff;
@@ -218,4 +226,19 @@ form#contact button {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+#social-links {
+  margin: 20px 0;
+}
+
+#social-links a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+#social-links a:hover {
+  color: #3498db;
 }
