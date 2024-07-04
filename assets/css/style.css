@@ -229,7 +229,44 @@ footer {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+#meal-plans {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+}
 
+.meal-plan {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.meal-plan h3 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.meal-plan h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.meal-plan ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.meal-plan li {
+  margin-bottom: 5px;
+}
+
+.disclaimer {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 20px;
+}
 /* Recovery page */
 #importance-of-recovery, #stretching-guide, #sleep-tips {
     background-color: #fff;
