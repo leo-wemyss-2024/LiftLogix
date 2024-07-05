@@ -150,3 +150,70 @@ document.addEventListener('DOMContentLoaded', function() {
         quizResults.style.display = 'block';
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const macroForm = document.getElementById('macro-form');
+    const macroResults = document.getElementById('macro-results');
+
+    macroForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+        const age = parseInt(document.getElementById('age').value);
+        const gender = document.getElementById('gender').value;
+        const activity = parseFloat(document.getElementById('activity').value);
+        const goal = document.getElementById('goal').value;
+
+        // Calculate BMR
+        let bmr;
+        if (gender === 'male') {
+            bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+        } else {
+            bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+        }
+
+        // Calculate TDEE (Total Daily Energy Expenditure)
+        let tdee = bmr * activity;
+
+        // Adjust calories based on goal
+        let calories;
+        switch(goal) {
+            case 'lose':
+                calories = tdee - 500;
+                break;
+            case 'gain':
+                calories = tdee + 500;
+                break;
+            default:
+                calories = tdee;
+        }
+
+        // Calculate macros
+        const protein = weight * 2.2; // 1g per lb of body weight
+        const fat = (calories * 0.25) / 9; // 25% of calories from fat
+        const carbs = (calories - (protein * 4) - (fat * 9)) / 4;
+
+        // Display results
+        document.getElementById('calories').textContent = Math.round(calories);
+        document.getElementById('protein').textContent = Math.round(protein);
+        document.getElementById('carbs').textContent = Math.round(carbs);
+        document.getElementById('fat').textContent = Math.round(fat);
+
+        macroResults.style.display = 'block';
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hydrationForm = document.getElementById('hydration-form');
+    const waterRecommendation = document.getElementById('water-recommendation');
+    const waterAmount = document.getElementById('water-amount');
+
+    hydrationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const weight = document.getElementById('body-weight').value;
+        const waterNeeded = (weight * 0.033).toFixed(2);  // 33 ml per kg of body weight
+        waterAmount.textContent = waterNeeded;
+        waterRecommendation.style.display = 'block';
+    });
+});

@@ -204,17 +204,178 @@
         </section>
         <section id="macro-calculator">
             <h2>Interactive Macro Calculator</h2>
-            <!-- Add your macro calculator form and results display here -->
+            <p>Calculate your ideal macronutrient ratios based on your goals and body composition.</p>
+            
+            <form id="macro-form">
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" required min="40" max="200">
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" name="height" required min="140" max="220">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required min="18" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="activity">Activity Level:</label>
+                    <select id="activity" name="activity" required>
+                        <option value="1.2">Sedentary</option>
+                        <option value="1.375">Lightly Active</option>
+                        <option value="1.55">Moderately Active</option>
+                        <option value="1.725">Very Active</option>
+                        <option value="1.9">Extra Active</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goal">Goal:</label>
+                    <select id="goal" name="goal" required>
+                        <option value="lose">Lose Weight</option>
+                        <option value="maintain">Maintain Weight</option>
+                        <option value="gain">Gain Weight</option>
+                    </select>
+                </div>
+                <button type="submit">Calculate Macros</button>
+            </form>
+        
+            <div id="macro-results" style="display: none;">
+                <h3>Your Daily Macronutrient Needs:</h3>
+                <p>Calories: <span id="calories"></span></p>
+                <p>Protein: <span id="protein"></span>g</p>
+                <p>Carbohydrates: <span id="carbs"></span>g</p>
+                <p>Fat: <span id="fat"></span>g</p>
+            </div>
         </section>
 
         <section id="hydration-guide">
             <h2>Hydration Guide</h2>
-            <!-- Add tips on proper water intake -->
+            <p>Proper hydration is crucial for overall health and optimal physical performance. Here's what you need to know about staying hydrated:</p>
+        
+            <div class="hydration-info">
+                <h3>Why is Hydration Important?</h3>
+                <ul>
+                    <li>Regulates body temperature</li>
+                    <li>Aids in digestion and nutrient absorption</li>
+                    <li>Helps maintain blood volume and circulation</li>
+                    <li>Cushions joints and protects organs</li>
+                    <li>Supports cognitive function</li>
+                </ul>
+            </div>
+        
+            <div class="hydration-calculator">
+                <h3>Daily Water Intake Calculator</h3>
+                <form id="hydration-form">
+                    <label for="body-weight">Your weight (kg):</label>
+                    <input type="number" id="body-weight" required min="30" max="200">
+                    <button type="submit">Calculate</button>
+                </form>
+                <p id="water-recommendation" style="display: none;">You should aim to drink <span id="water-amount"></span> liters of water per day.</p>
+            </div>
+        
+            <div class="hydration-tips">
+                <h3>Tips for Staying Hydrated</h3>
+                <ol>
+                    <li>Carry a reusable water bottle with you throughout the day.</li>
+                    <li>Set reminders on your phone to drink water regularly.</li>
+                    <li>Eat water-rich foods like cucumbers, watermelon, and zucchini.</li>
+                    <li>Drink a glass of water before each meal.</li>
+                    <li>Flavor your water with fresh fruits or herbs if you find plain water boring.</li>
+                    <li>Monitor your urine color - pale yellow indicates good hydration.</li>
+                    <li>Increase water intake during hot weather or intense physical activity.</li>
+                    <li>Start and end your day with a glass of water.</li>
+                </ol>
+            </div>
+        
+            <div class="hydration-signs">
+                <h3>Signs of Dehydration</h3>
+                <ul>
+                    <li>Thirst</li>
+                    <li>Dark yellow urine</li>
+                    <li>Fatigue</li>
+                    <li>Dizziness</li>
+                    <li>Dry mouth and lips</li>
+                    <li>Headache</li>
+                    <li>Decreased urine output</li>
+                </ul>
+            </div>
+        
+            <p class="hydration-note">Note: While these guidelines are helpful for most people, individual hydration needs can vary. Factors like climate, physical activity, and overall health can affect your water needs. Always consult with a healthcare professional for personalized advice.</p>
         </section>
 
         <section id="eating-for-performance">
             <h2>Eating for Performance</h2>
-            <!-- Add information tailored to different types of athletes -->
+            <p>Proper nutrition is crucial for athletic performance. Different types of athletes have varying nutritional needs. Here's a guide to help you fuel your body based on your sport or activity:</p>
+        
+            <div class="athlete-type">
+                <h3>Endurance Athletes (Runners, Cyclists, Swimmers)</h3>
+                <ul>
+                    <li><strong>Carbohydrates:</strong> 55-65% of total calories. Focus on complex carbs like whole grains, fruits, and vegetables.</li>
+                    <li><strong>Protein:</strong> 1.2-1.4 g per kg of body weight. Include lean meats, fish, eggs, and plant-based proteins.</li>
+                    <li><strong>Fat:</strong> 20-30% of total calories. Emphasize healthy fats from sources like nuts, seeds, and avocados.</li>
+                    <li><strong>Key Nutrients:</strong> Iron, calcium, and vitamins C and D.</li>
+                    <li><strong>Hydration:</strong> Drink water consistently throughout the day and during long training sessions.</li>
+                </ul>
+            </div>
+        
+            <div class="athlete-type">
+                <h3>Strength Athletes (Weightlifters, Bodybuilders)</h3>
+                <ul>
+                    <li><strong>Protein:</strong> 1.6-2.0 g per kg of body weight. Spread protein intake throughout the day.</li>
+                    <li><strong>Carbohydrates:</strong> 45-55% of total calories. Focus on whole grains and starchy vegetables.</li>
+                    <li><strong>Fat:</strong> 25-35% of total calories. Include sources of omega-3 fatty acids.</li>
+                    <li><strong>Key Nutrients:</strong> Creatine, zinc, and vitamin B complex.</li>
+                    <li><strong>Timing:</strong> Consume protein and carbs within 30 minutes post-workout for optimal recovery.</li>
+                </ul>
+            </div>
+        
+            <div class="athlete-type">
+                <h3>Team Sport Athletes (Soccer, Basketball, Hockey)</h3>
+                <ul>
+                    <li><strong>Carbohydrates:</strong> 50-60% of total calories. Focus on easily digestible carbs before games.</li>
+                    <li><strong>Protein:</strong> 1.4-1.7 g per kg of body weight. Include a variety of protein sources.</li>
+                    <li><strong>Fat:</strong> 25-35% of total calories. Focus on heart-healthy fats.</li>
+                    <li><strong>Key Nutrients:</strong> Electrolytes (sodium, potassium), B vitamins, and antioxidants.</li>
+                    <li><strong>Hydration:</strong> Crucial for maintaining performance during high-intensity, stop-and-go activities.</li>
+                </ul>
+            </div>
+        
+            <div class="athlete-type">
+                <h3>Power Athletes (Sprinters, Jumpers, Throwers)</h3>
+                <ul>
+                    <li><strong>Protein:</strong> 1.5-1.8 g per kg of body weight. Emphasis on lean proteins.</li>
+                    <li><strong>Carbohydrates:</strong> 50-60% of total calories. Focus on low glycemic index carbs.</li>
+                    <li><strong>Fat:</strong> 20-30% of total calories. Include sources of medium-chain triglycerides.</li>
+                    <li><strong>Key Nutrients:</strong> Beta-alanine, caffeine (in moderation), and branched-chain amino acids.</li>
+                    <li><strong>Timing:</strong> Small, frequent meals to maintain energy levels throughout the day.</li>
+                </ul>
+            </div>
+        
+            <div class="pre-post-workout">
+                <h3>Pre and Post-Workout Nutrition Tips</h3>
+                <h4>Pre-Workout:</h4>
+                <ul>
+                    <li>Consume a meal rich in carbohydrates and moderate in protein 2-3 hours before exercise.</li>
+                    <li>If needed, have a small snack 30-60 minutes before exercise (e.g., banana, energy bar).</li>
+                    <li>Hydrate well before your workout.</li>
+                </ul>
+                <h4>Post-Workout:</h4>
+                <ul>
+                    <li>Consume a combination of carbohydrates and protein within 30 minutes after exercise.</li>
+                    <li>Aim for a 3:1 or 4:1 ratio of carbohydrates to protein.</li>
+                    <li>Rehydrate with water or a sports drink if exercise was intense or lasted over an hour.</li>
+                </ul>
+            </div>
+        
+            <p class="performance-note">Remember, these are general guidelines. Individual needs may vary based on factors such as training intensity, body composition goals, and overall health. Consult with a sports nutritionist for personalized advice.</p>
         </section>
 
         <section id="testimonials">
