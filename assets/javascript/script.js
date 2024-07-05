@@ -105,3 +105,48 @@ document.addEventListener('DOMContentLoaded', function() {
         calorieResult.classList.remove('hidden');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const quizForm = document.getElementById('quiz-form');
+    const quizResults = document.getElementById('quiz-results');
+    const scoreSpan = document.getElementById('score');
+    const feedbackP = document.getElementById('feedback');
+
+    const correctAnswers = {
+        q1: 'd',
+        q2: 'c',
+        q3: 'b'
+    };
+
+    quizForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let score = 0;
+        const userAnswers = {
+            q1: quizForm.q1.value,
+            q2: quizForm.q2.value,
+            q3: quizForm.q3.value
+        };
+
+        for (let question in userAnswers) {
+            if (userAnswers[question] === correctAnswers[question]) {
+                score++;
+            }
+        }
+
+        scoreSpan.textContent = `${score} out of 3`;
+        
+        let feedback;
+        if (score === 3) {
+            feedback = "Excellent! You're a nutrition expert!";
+        } else if (score === 2) {
+            feedback = "Good job! You know your nutrition basics.";
+        } else if (score === 1) {
+            feedback = "Not bad, but there's room for improvement.";
+        } else {
+            feedback = "Time to brush up on your nutrition knowledge!";
+        }
+        
+        feedbackP.textContent = feedback;
+        quizResults.style.display = 'block';
+    });
+});
