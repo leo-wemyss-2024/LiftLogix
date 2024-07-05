@@ -363,16 +363,33 @@ form#contact button {
 }
 
 #social-links {
-  margin: 20px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #333; /* or any color that fits your design */
 }
 
 #social-links a {
   color: #fff;
   font-size: 24px;
-  margin: 0 10px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #social-links a:hover {
-  color: #3498db;
+  color: #3498db; /* or any highlight color you prefer */
+  transform: scale(1.2);
+}
+
+footer {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
