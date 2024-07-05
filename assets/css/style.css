@@ -92,6 +92,59 @@ main {
   transform: scale(1.05);
 }
 
+.program-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.program-image {
+  flex: 1;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.program-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.program-text h3 {
+  margin-top: 20px;
+}
+
+.program-text ul, .program-text ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .program-content {
+      flex-direction: column;
+  }
+  
+  .program-image {
+      max-width: 100%;
+  }
+}
+
 /* Testimonials */
 #testimonials {
   background-color: #fff;
