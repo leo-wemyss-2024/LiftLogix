@@ -1090,6 +1090,199 @@ form#contact button {
     cursor: pointer;
 }
 
+#importance-of-recovery {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+}
+
+#importance-of-recovery h2 {
+  color: #3498db;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recovery-benefits, .recovery-strategies, .recovery-tips {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recovery-benefits h3, .recovery-strategies h3, .recovery-tips h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.recovery-benefits ul, .recovery-tips ul {
+  padding-left: 20px;
+}
+
+.recovery-benefits li, .recovery-tips li {
+  margin-bottom: 10px;
+}
+
+.strategy {
+  margin-bottom: 20px;
+}
+
+.strategy h4 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.recovery-note {
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  #importance-of-recovery {
+      padding: 20px 10px;
+  }
+}
+
+#stretching-guide {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+}
+
+.body-selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.body-part {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.body-part:hover {
+  background-color: #2980b9;
+}
+
+#stretch-display {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#selected-part {
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.stretch {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.stretch:last-child {
+  border-bottom: none;
+}
+
+.stretch h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.stretch img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#sleep-tips {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+}
+
+#sleep-tips h2 {
+  color: #3498db;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tip-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+}
+
+.tip-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.sleep-importance {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sleep-importance h3 {
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.sleep-importance ul {
+  padding-left: 20px;
+}
+
+.sleep-importance li {
+  margin-bottom: 10px;
+}
+
+.sleep-note {
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .tips-container {
+      grid-template-columns: 1fr;
+  }
+}
+
 #social-links {
   display: flex;
   justify-content: space-evenly;

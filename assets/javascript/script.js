@@ -233,3 +233,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const bodyParts = document.querySelectorAll('.body-part');
+    const selectedPart = document.getElementById('selected-part');
+    const stretchesDiv = document.getElementById('stretches');
+
+    const stretches = {
+        neck: [
+            { name: 'Neck Rotation', instructions: 'Slowly rotate your head in a circular motion, 5 times clockwise and 5 times counterclockwise.', image: 'assets/images/stretches/neck-rotation.jpg' },
+            { name: 'Neck Tilt', instructions: 'Tilt your head to one side, bringing your ear towards your shoulder. Hold for 15-30 seconds, then repeat on the other side.', image: 'assets/images/stretches/neck-tilt.jpg' }
+        ],
+        shoulders: [
+            { name: 'Shoulder Rolls', instructions: 'Roll your shoulders forward 10 times, then backward 10 times.', image: 'assets/images/stretches/shoulder-rolls.jpg' },
+            { name: 'Cross-Body Shoulder Stretch', instructions: 'Bring one arm across your chest, use the other arm to apply gentle pressure. Hold for 15-30 seconds, then switch arms.', image: 'assets/images/stretches/cross-body-shoulder.jpg' }
+        ],
+        back: [
+            { name: 'Cat-Cow Stretch', instructions: 'On your hands and knees, alternate between arching your back (cow) and rounding your spine (cat). Repeat 10 times.', image: 'assets/images/stretches/cat-cow.jpg' },
+            { name: 'Child's Pose', instructions: 'Kneel on the floor, sit back on your heels, then bend forward and stretch your arms out in front of you. Hold for 30 seconds.', image: 'assets/images/stretches/childs-pose.jpg' }
+        ],
+        arms: [
+            { name: 'Tricep Stretch', instructions: 'Raise one arm overhead, bend at the elbow, and reach down your back. Use your other hand to gently push the elbow back. Hold for 15-30 seconds, then switch arms.', image: 'assets/images/stretches/tricep-stretch.jpg' },
+            { name: 'Forearm Stretch', instructions: 'Extend one arm in front of you, palm down. Use your other hand to gently pull the fingers back. Hold for 15-30 seconds, then switch arms.', image: 'assets/images/stretches/forearm-stretch.jpg' }
+        ],
+        legs: [
+            { name: 'Standing Quad Stretch', instructions: 'Stand on one leg, bring your heel towards your buttocks, and hold your foot with your hand. Hold for 15-30 seconds, then switch legs.', image: 'assets/images/stretches/quad-stretch.jpg' },
+            { name: 'Seated Hamstring Stretch', instructions: 'Sit on the floor with one leg extended. Reach for your toes, keeping your back straight. Hold for 15-30 seconds, then switch legs.', image: 'assets/images/stretches/hamstring-stretch.jpg' }
+        ]
+    };
+
+    bodyParts.forEach(part => {
+        part.addEventListener('click', function() {
+            const bodyPart = this.getAttribute('data-part');
+            selectedPart.textContent = this.textContent + ' Stretches';
+            displayStretches(bodyPart);
+        });
+    });
+
+    function displayStretches(bodyPart) {
+        stretchesDiv.innerHTML = '';
+        stretches[bodyPart].forEach(stretch => {
+            const stretchElement = document.createElement('div');
+            stretchElement.classList.add('stretch');
+            stretchElement.innerHTML = `
+                <h4>${stretch.name}</h4>
+                <img src="${stretch.image}" alt="${stretch.name}">
+                <p>${stretch.instructions}</p>
+            `;
+            stretchesDiv.appendChild(stretchElement);
+        });
+    }
+});
