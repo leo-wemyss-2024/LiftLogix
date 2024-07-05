@@ -37,7 +37,6 @@
 
         <section id="workout-of-the-day">
             <h2>Workout of the Day</h2>
-            <!-- We'll add the workout details here later with JavaScript -->
         </section>
 
         <section id="program-links">
@@ -82,7 +81,135 @@
                 </a>
             </div>
         </section>
-        
+        <section id="personalized-welcome">
+            <h2>Welcome back, <span id="user-name">Fitness Enthusiast</span>!</h2>
+            <div id="quick-links">
+                <a href="#" class="quick-link">Your Workout Plan</a>
+                <a href="#" class="quick-link">Nutrition Tracker</a>
+                <a href="#" class="quick-link">Progress Chart</a>
+            </div>
+        </section>
+        </section>
+
+        <section id="fitness-goal-selector">
+            <h2>What's Your Fitness Goal?</h2>
+            <div class="goal-options">
+                <button class="goal-btn" data-goal="weight-loss">Weight Loss</button>
+                <button class="goal-btn" data-goal="muscle-gain">Muscle Gain</button>
+                <button class="goal-btn" data-goal="endurance">Improve Endurance</button>
+            </div>
+            <div id="goal-specific-content">
+                <!-- Dynamically populated based on selected goal -->
+            </div>
+        </section>
+
+        <section id="daily-challenge">
+            <h2>Daily Fitness Challenge</h2>
+            <div id="challenge-content">
+                <!-- Dynamically updated daily -->
+            </div>
+            <button id="complete-challenge">Mark as Completed</button>
+        </section>
+
+        <section id="body-map">
+            <h2>Target Your Workout</h2>
+            <div id="interactive-body">
+                <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Simplified body outline -->
+                    <path d="M100 50 Q130 100 130 150 Q130 200 100 250 Q70 200 70 150 Q70 100 100 50" class="body-part" id="upper-body" />
+                    <path d="M70 150 Q70 200 60 300 L80 300 Q80 200 100 250 Q120 200 120 300 L140 300 Q130 200 130 150" class="body-part" id="lower-body" />
+                    <circle cx="100" cy="30" r="20" class="body-part" id="head" />
+                    <!-- Add more body parts as needed -->
+                </svg>
+            </div>
+            <div id="body-part-info">
+                <!-- Dynamically populated based on selected body part -->
+            </div>
+        </section>
+
+        <section id="fitness-quiz">
+            <h2>Discover Your Fitness Level</h2>
+            <button id="start-quiz">Take the Quiz</button>
+            <div id="quiz-container" style="display:none;">
+                <!-- Quiz questions dynamically populated here -->
+            </div>
+        </section>
+
+        <section id="customizable-dashboard">
+            <h2>Your Fitness Dashboard</h2>
+            <div id="dashboard-widgets">
+                <!-- Customizable widgets go here -->
+            </div>
+        </section>
+
+        <section id="fitness-news">
+            <h2>Latest Fitness News</h2>
+            <div id="news-feed">
+                <!-- Dynamically populated with latest fitness news -->
+            </div>
+        </section>
+
+        <section id="community-highlights">
+            <h2>Community Spotlights</h2>
+            <div id="user-content">
+                <!-- User-generated content displayed here -->
+            </div>
+        </section>
+        <section id="exercise-demos">
+            <h2>Exercise of the Day</h2>
+            <div id="exercise-animation">
+                <div class="exercise-info">
+                    <h3 id="exercise-name">Jumping Jacks</h3>
+                    <p id="exercise-description">A full-body exercise that increases heart rate and improves coordination.</p>
+                </div>
+                <div class="stick-figure-container">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm left"></div>
+                        <div class="arm right"></div>
+                        <div class="leg left"></div>
+                        <div class="leg right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="weather-workouts">
+            <h2>Weather-Based Workout Suggestions</h2>
+            <div id="weather-info">
+                <!-- Current weather information -->
+            </div>
+            <div id="workout-suggestion">
+                <!-- Workout suggestion based on weather -->
+            </div>
+        </section>
+
+        <section id="gamification">
+            <h2>Your Fitness Achievements</h2>
+            <div id="user-badges">
+                <!-- User's earned badges displayed here -->
+            </div>
+            <div id="user-level">
+                <!-- User's current level and progress -->
+            </div>
+        </section>
+    </main>
+
+    <aside id="chatbot">
+        <div id="chatbot-toggle">Chat with FitBot</div>
+        <div id="chatbot-container" style="display:none;">
+            <div id="chatbot-header">
+                <h3>FitBot</h3>
+                <button id="chatbot-close">&times;</button>
+            </div>
+            <div id="chatbot-messages"></div>
+            <div id="chatbot-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+    </aside>s
     </main>
 
     <footer>
@@ -104,7 +231,7 @@
         <p>&copy; 2023 FitFusion. All rights reserved.</p>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/javascript/script.js"></script>
 </body>
 
 </html>
