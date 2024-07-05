@@ -722,6 +722,280 @@ footer {
   }
 }
 
+#testimonials {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.testimonial {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: left;
+}
+
+.client-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0 0 15px;
+  padding: 0;
+  border-left: 3px solid #3498db;
+  padding-left: 15px;
+}
+
+.client-name {
+  font-weight: bold;
+  color: #3498db;
+  text-align: right;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .testimonial {
+      max-width: 100%;
+  }
+}
+
+#nutrition-faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.faq-container {
+  margin-top: 20px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #f5f5f5;
+  border: none;
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #e0e0e0;
+}
+
+.faq-question:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.faq-question.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.faq-answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: white;
+}
+
+.faq-answer p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#healthy-recipes {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.recipe-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.recipe-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-title {
+  font-size: 1.2em;
+  margin: 15px 15px 10px;
+  color: #333;
+}
+
+.recipe-description {
+  font-size: 0.9em;
+  margin: 0 15px 15px;
+  color: #666;
+}
+
+.recipe-link {
+  display: inline-block;
+  margin: 0 15px 15px;
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-link:hover {
+  background-color: #2980b9;
+}
+
+.view-all-recipes {
+  display: block;
+  width: 200px;
+  margin: 30px auto 0;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.view-all-recipes:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .recipe-gallery {
+      grid-template-columns: 1fr;
+  }
+}
+
+#supplements {
+  padding: 40px 20px;
+  background-color: #f0f8ff;
+}
+
+.supplements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.supplement-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.supplement-card:hover {
+  transform: translateY(-5px);
+}
+
+.supplement-card h3 {
+  color: #3498db;
+  margin-top: 0;
+}
+
+.supplement-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.supplement-card p {
+  margin-bottom: 10px;
+}
+
+.supplement-card strong {
+  color: #2c3e50;
+}
+
+.supplement-disclaimer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #e8f4f8;
+  border-radius: 10px;
+  border-left: 5px solid #3498db;
+}
+
+.supplement-disclaimer h3 {
+  color: #3498db;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .supplements-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
 #calorie-calculator {
   background-color: #f9f9f9;
   padding: 20px;
