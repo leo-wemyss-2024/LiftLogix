@@ -639,6 +639,33 @@ async function getWeatherData() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    updateWeatherBasedWorkout();
+});
+
+async function updateWeatherBasedWorkout() {
+    const weatherData = await getWeatherData();
+    if (weatherData) {
+        const workout = suggestWorkout(weatherData);
+        updateWeatherWorkout(weatherData, workout);
+    }
+}
+
+async function getWeatherData() {
+    const apiKey = 'bd5e378503939ddaee76f12ad7a97608';
+    const city = 'Ireland';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        const weatherInfo = document.getElementById('weather-info');
+        weatherInfo.innerHTML = `<p>Error fetching weather data. Please try again later.</p>`;
+    }
+}
+
 function suggestWorkout(weatherData) {
     const temp = weatherData.main.temp;
     const condition = weatherData.weather[0].main.toLowerCase();
@@ -675,6 +702,7 @@ function updateWeatherWorkout(weatherData, workout) {
         </ul>
     `;
 }
+
 
 function displayUserBadgesAndLevel() {
     const userBadges = document.getElementById('user-badges');
