@@ -301,6 +301,111 @@ blockquote {
       font-size: 0.9em;
   }
 }
+#customizable-dashboard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#customizable-dashboard h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#dashboard-widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.widget {
+  background: #ecf0f1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.widget:hover {
+  transform: translateY(-5px);
+}
+
+.widget h3 {
+  color: #2980b9;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.widget p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.widget button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: background 0.3s;
+}
+
+.widget button:hover {
+  background: #c0392b;
+}
+
+#widget-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#widget-controls button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+#widget-controls button:hover {
+  background: #2ecc71;
+}
+
+/* Additional styling for improved spacing and text formatting */
+
+#customizable-dashboard {
+  margin-top: 60px;
+  padding: 40px;
+}
+
+.widget {
+  padding: 25px;
+}
+
+.widget p {
+  font-size: 18px;
+}
+
+#widget-controls button {
+  margin-top: 10px;
+}
 
 #fitness-goal-selector {
   background-color: #ffffff;

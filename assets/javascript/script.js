@@ -404,46 +404,30 @@ function updateButtonState(completeButton) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+function setupBodyPartInfo() {
     const bodyParts = document.querySelectorAll('.body-part');
     const bodyPartInfo = document.getElementById('body-part-info');
-
-    const exerciseInfo = {
-        'head-front': 'Try neck rotations and facial exercises to relieve tension.',
-        'neck-front': 'Gentle neck stretches and chin tucks can improve posture.',
-        'chest': 'Push-ups, bench presses, and chest flies target this area.',
-        'abs': 'Planks, crunches, and leg raises are great for core strength.',
-        'left-arm-front': 'Bicep curls, hammer curls, and forearm exercises.',
-        'right-arm-front': 'Tricep extensions, push-downs, and dips.',
-        'left-leg-front': 'Squats, lunges, and leg presses target the front of the legs.',
-        'right-leg-front': 'Leg extensions, calf raises, and plyometric exercises.',
-        'head-back': 'Neck retractions and isometric holds can strengthen the back of the head and neck.',
-        'neck-back': 'Neck extensions and shoulder shrugs target this area.',
-        'upper-back': 'Rows, pull-ups, and lat pull-downs work the upper back muscles.',
-        'lower-back': 'Deadlifts, back extensions, and good mornings strengthen the lower back.',
-        'left-arm-back': 'Tricep kickbacks, reverse curls, and shoulder presses.',
-        'right-arm-back': 'Bent-over rows, face pulls, and rear delt flies.',
-        'left-leg-back': 'Deadlifts, hamstring curls, and glute bridges target the back of the legs.',
-        'right-leg-back': 'Romanian deadlifts, hip thrusts, and step-ups work the posterior chain.'
+    const workoutInfo = {
+        'upper-body': 'Focus on exercises like push-ups, pull-ups, and shoulder presses for a strong upper body.',
+        'lower-body': 'Squats, lunges, and deadlifts are great for building lower body strength.',
+        'head': 'Don\'t forget neck stretches and exercises to relieve tension in your head and neck area.',
     };
-
     bodyParts.forEach(part => {
         part.addEventListener('click', function() {
             const partId = this.id;
-            displayBodyPartInfo(partId);
-            highlightBodyPart(this);
+            displayBodyPartInfo(partId, workoutInfo, bodyPartInfo);
         });
     });
+}
 
-    function displayBodyPartInfo(partId) {
-        bodyPartInfo.textContent = exerciseInfo[partId] || 'Select a body part to see targeted exercises.';
+function displayBodyPartInfo(partId, workoutInfo, bodyPartInfo) {
+    if (workoutInfo[partId]) {
+        bodyPartInfo.innerHTML = `<h3>${partId.replace('-', ' ').toUpperCase()}</h3><p>${workoutInfo[partId]}</p>`;
+        bodyPartInfo.style.display = 'block';
+    } else {
+        bodyPartInfo.style.display = 'none';
     }
-
-    function highlightBodyPart(part) {
-        bodyParts.forEach(p => p.style.fill = '#e0e0e0');
-        part.style.fill = '#3498db';
-    }
-});
+}
 
 function setupFitnessQuiz() {
     const startQuizBtn = document.getElementById('start-quiz');
@@ -794,4 +778,71 @@ function setupChatbot() {
             return "I'm sorry, I didn't quite understand that. Could you please rephrase or ask about workouts, diet, or general fitness tips?";
         }
     }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial setup or loading saved widgets
+    loadSavedWidgets();
+});
+
+function addWidget(type) {
+    const widget = createWidget(type);
+    document.getElementById('dashboard-widgets').appendChild(widget);
+    saveWidgets();
+}
+
+function createWidget(type) {
+    const widget = document.createElement('div');
+    widget.className = 'widget';
+    widget.setAttribute('data-type', type);
+
+    switch (type) {
+        case 'workout':
+            widget.innerHTML = `
+                <h3>Workout</h3>
+                <p>Today's workout plan: 30 mins of HIIT</p>
+                <button onclick="removeWidget(this)">Remove</button>
+            `;
+            break;
+        case 'nutrition':
+            widget.innerHTML = `
+                <h3>Nutrition</h3>
+                <p>Calories: 2200, Protein: 150g, Carbs: 200g, Fat: 70g</p>
+                <button onclick="removeWidget(this)">Remove</button>
+            `;
+            break;
+        case 'progress':
+            widget.innerHTML = `
+                <h3>Progress</h3>
+                <p>Weight lost: 5 kg</p>
+                <button onclick="removeWidget(this)">Remove</button>
+            `;
+            break;
+        default:
+            widget.innerHTML = `
+                <h3>Custom Widget</h3>
+                <p>Content for custom widget</p>
+                <button onclick="removeWidget(this)">Remove</button>
+            `;
+    }
+
+    return widget;
+}
+
+function removeWidget(button) {
+    const widget = button.parentElement;
+    widget.remove();
+    saveWidgets();
+}
+
+function saveWidgets() {
+    const widgets = Array.from(document.querySelectorAll('.widget')).map(widget => widget.getAttribute('data-type'));
+    localStorage.setItem('dashboardWidgets', JSON.stringify(widgets));
+}
+
+function loadSavedWidgets() {
+    const savedWidgets = JSON.parse(localStorage.getItem('dashboardWidgets') || '[]');
+    savedWidgets.forEach(type => {
+        const widget = createWidget(type);
+        document.getElementById('dashboard-widgets').appendChild(widget);
+    });
 }
