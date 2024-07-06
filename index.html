@@ -69,7 +69,7 @@
                             <p class="client-name">- John Smith</p>
                         </div>
                     </div>
-                    <!-- Add more testimonials as needed -->
+              
                 </div>
                 <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -114,16 +114,64 @@
         <section id="body-map">
             <h2>Target Your Workout</h2>
             <div id="interactive-body">
-                <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Simplified body outline -->
-                    <path d="M100 50 Q130 100 130 150 Q130 200 100 250 Q70 200 70 150 Q70 100 100 50" class="body-part" id="upper-body" />
-                    <path d="M70 150 Q70 200 60 300 L80 300 Q80 200 100 250 Q120 200 120 300 L140 300 Q130 200 130 150" class="body-part" id="lower-body" />
-                    <circle cx="100" cy="30" r="20" class="body-part" id="head" />
-                    <!-- Add more body parts as needed -->
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Front View -->
+                    <g transform="translate(0, 0)">
+                        <!-- Head front -->
+                        <circle cx="100" cy="40" r="30" class="body-part" id="head-front" aria-label="Head (Front)" />
+                        
+                        <!-- Neck front -->
+                        <path d="M90 70 L110 70 L108 80 L92 80 Z" class="body-part" id="neck-front" aria-label="Neck (Front)" />
+                        
+                        <!-- Chest -->
+                        <path d="M60 80 L140 80 L150 180 L50 180 Z" class="body-part" id="chest" aria-label="Chest" />
+                        
+                        <!-- Abs -->
+                        <path d="M60 180 L140 180 L150 260 L50 260 Z" class="body-part" id="abs" aria-label="Abs" />
+                        
+                        <!-- Left Arm front -->
+                        <path d="M60 85 Q40 130 50 220 L65 220 Q55 130 75 85 Z" class="body-part" id="left-arm-front" aria-label="Left Arm (Front)" />
+                        
+                        <!-- Right Arm front -->
+                        <path d="M140 85 Q160 130 150 220 L135 220 Q145 130 125 85 Z" class="body-part" id="right-arm-front" aria-label="Right Arm (Front)" />
+                        
+                        <!-- Left Leg front -->
+                        <path d="M70 260 Q60 350 70 400 L90 400 Q80 350 90 260 Z" class="body-part" id="left-leg-front" aria-label="Left Leg (Front)" />
+                        
+                        <!-- Right Leg front -->
+                        <path d="M130 260 Q140 350 130 400 L110 400 Q120 350 110 260 Z" class="body-part" id="right-leg-front" aria-label="Right Leg (Front)" />
+                    </g>
+        
+                    <!-- Back View -->
+                    <g transform="translate(200, 0)">
+                        <!-- Head back -->
+                        <circle cx="100" cy="40" r="30" class="body-part" id="head-back" aria-label="Head (Back)" />
+                        
+                        <!-- Neck back -->
+                        <path d="M90 70 L110 70 L108 80 L92 80 Z" class="body-part" id="neck-back" aria-label="Neck (Back)" />
+                        
+                        <!-- Upper back -->
+                        <path d="M60 80 L140 80 L150 180 L50 180 Z" class="body-part" id="upper-back" aria-label="Upper Back" />
+                        
+                        <!-- Lower back -->
+                        <path d="M60 180 L140 180 L150 260 L50 260 Z" class="body-part" id="lower-back" aria-label="Lower Back" />
+                        
+                        <!-- Left Arm back -->
+                        <path d="M60 85 Q40 130 50 220 L65 220 Q55 130 75 85 Z" class="body-part" id="left-arm-back" aria-label="Left Arm (Back)" />
+                        
+                        <!-- Right Arm back -->
+                        <path d="M140 85 Q160 130 150 220 L135 220 Q145 130 125 85 Z" class="body-part" id="right-arm-back" aria-label="Right Arm (Back)" />
+                        
+                        <!-- Left Leg back -->
+                        <path d="M70 260 Q60 350 70 400 L90 400 Q80 350 90 260 Z" class="body-part" id="left-leg-back" aria-label="Left Leg (Back)" />
+                        
+                        <!-- Right Leg back -->
+                        <path d="M130 260 Q140 350 130 400 L110 400 Q120 350 110 260 Z" class="body-part" id="right-leg-back" aria-label="Right Leg (Back)" />
+                    </g>
                 </svg>
             </div>
             <div id="body-part-info">
-                <!-- Dynamically populated based on selected body part -->
+                Select a body part to see targeted exercises.
             </div>
         </section>
 
